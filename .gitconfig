@@ -1,0 +1,8 @@
+[user]
+	name = Mark Odell
+	email = dracone.cordis@gmail.com
+[core]
+	excludesfile = /Users/mo/.gitignore_global
+[push]
+	default = simple
+[commit]
