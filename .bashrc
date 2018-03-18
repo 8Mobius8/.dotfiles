@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-. "/usr/local/opt/nvm/nvm.sh"
+[ -f ~/bin/bash-powerline.sh ] && . ~/bin/bash-powerline.sh
+
+[ -z ${NVM_DIR} ] && . "/usr/local/opt/nvm/nvm.sh"
+
