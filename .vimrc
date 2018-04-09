@@ -21,6 +21,7 @@ set smartindent	" Enable smart-indent
 set smarttab	" Enable smart-tabs
 set softtabstop=2	" Number of spaces per Tab
 
+
 syntax enable "Syntax highlighting for various file extensions
 
 colorscheme Monokai

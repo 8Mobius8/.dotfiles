@@ -7,7 +7,10 @@ if [[ $BREW_PREFIX != "" ]]; then
   fi
 fi
 
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
 # setup my personal bin to override all
-[[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
+[[ -L "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
+

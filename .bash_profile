@@ -1,3 +1,4 @@
-[ -e .profile ] && source .profile
+[ -f ~/.profile ] && . ~/.profile
+[ -f ~/.bashrc ]  && . ~/.bashrc
 
-[ -e .bashrc ] && source .bashrc
+
