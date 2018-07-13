@@ -2,9 +2,10 @@
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
 
+set termguicolors
+
 " General
 set number	" Show line numbers
-set linebreak	" Break lines at word (requires Wrap lines)
 set showmatch	" Highlight matching brace
 set visualbell	" Use visual bell (no beeping)
  
@@ -19,7 +20,7 @@ set smartindent	" Enable smart-indent
 set smarttab	" Enable smart-tabs
 set softtabstop=2	" Number of spaces per Tab
 
-syntax enable "Syntax highlighting for various file extensions
+syntax on "Syntax highlighting for various file extensions
 
-colorscheme Monokai
+colorscheme monokai 
 

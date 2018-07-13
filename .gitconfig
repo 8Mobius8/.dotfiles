@@ -1,8 +1,15 @@
 [user]
 	name = Mark Odell
-	email = dracone.cordis@gmail.com
+	email = m4rk.odell@gmail.com
+	signingkey = AFB0CF3C60CC84CC
 [core]
 	excludesfile = /Users/mo/.gitignore_global
+	editor = nvim
 [push]
 	default = simple
+[gpg]
+	program = gpg
 [commit]
+	gpgsign = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/

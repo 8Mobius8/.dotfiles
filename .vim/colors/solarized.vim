@@ -1,0 +1,1 @@
+/Users/mo/.dotfiles/vim-colors-solarized/colors/solarized.vim

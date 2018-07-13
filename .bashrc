@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[ -z ${NVM_DIR} ] && . "/usr/local/opt/nvm/nvm.sh"
+[ -v NVM_DIR ] && . "/usr/local/opt/nvm/nvm.sh" 
 
 # Powerline Daemon and bash setup
 if [ -d /usr/local/lib/python3.6/site-packages/powerline ]; then
@@ -12,3 +12,5 @@ fi
 
 ## iterm2 Integration 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+alias docker-rm-all="docker rm -f $(docker ps -a --format {{.ID}} | paste -s -d ' ' -)"

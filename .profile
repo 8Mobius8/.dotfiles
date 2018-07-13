@@ -1,3 +1,5 @@
+source ~/.profile.private
+
 # GNU coreutils overriding OS X natives
 if [[ $BREW_PREFIX != "" ]]; then
   BREW_COREUTILS=$(brew --prefix coreutils) > /dev/null 2>&1
@@ -7,10 +9,16 @@ if [[ $BREW_PREFIX != "" ]]; then
   fi
 fi
 
+# Python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
-# setup my personal bin to override all
-[[ -L "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
+# GO
+export GOROOT=/usr/local/Cellar/go/1.10.1/libexec
+export PATH=$PATH:$GOROOT/bin:$HOME/go/bin
 
+# NodeJS
 export NVM_DIR="$HOME/.nvm"
+
+# setup my personal bin for Mark made scripts
+[[ -L "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
 
