@@ -13,4 +13,6 @@ fi
 ## iterm2 Integration 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-alias docker-rm-all="docker rm -f $(docker ps -a --format {{.ID}} | paste -s -d ' ' -)"
+function docker-rm-all() {
+  docker rm -f $(docker ps -a --format {{.ID}} | paste -s -d ' ' -)
+}
