@@ -1,12 +1,13 @@
 source ~/.profile.private
 
+if [[ -x $(which brew) ]]; then
+  export BREW_PREFIX=$(brew --prefix)
+fi
+
 # GNU coreutils overriding OS X natives
 if [[ $BREW_PREFIX != "" ]]; then
-  BREW_COREUTILS=$(brew --prefix coreutils) > /dev/null 2>&1
-  if [ -n $BREW_COREUTILS ]; then
-    PATH="$BREW_COREUTILS/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
-    MANPATH="$BREW_COREUTILS/libexec/gnuman:$MANPATH"
-  fi
+  PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
+  MANPATH="$BREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
 # Python
@@ -17,8 +18,16 @@ export GOROOT=/usr/local/Cellar/go/1.10.1/libexec
 export PATH=$PATH:$GOROOT/bin:$HOME/go/bin
 
 # NodeJS
-export NVM_DIR="$HOME/.nvm"
+[ -d ~/.nvm ] && . "/usr/local/opt/nvm/nvm.sh"
 
 # setup my personal bin for Mark made scripts
 [[ -L "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
+
+function _update_ps1() {
+    PS1="$(~/go/bin/powerline-go -modules nix-shell,venv,user,ssh,cwd,perms,git,hg,jobs,exit,root,vgo -error $?)"
+}
+
+if [ "$TERM" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
 

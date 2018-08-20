@@ -1,3 +1,5 @@
-[ -f ~/.profile ] && . ~/.profile
-[ -f ~/.bashrc ]  && . ~/.bashrc
+. ~/.profile
+. ~/.bashrc
+
+#test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
