@@ -14,7 +14,7 @@ fi
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # GO
-export GOROOT=/usr/local/Cellar/go/1.10.1/libexec
+export GOROOT=/usr/local/Cellar/go/1.11.2/libexec
 export PATH=$PATH:$GOROOT/bin:$HOME/go/bin
 
 # NodeJS
@@ -24,7 +24,7 @@ export PATH=$PATH:$GOROOT/bin:$HOME/go/bin
 [[ -L "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
 
 function _update_ps1() {
-    PS1="$(~/go/bin/powerline-go -modules nix-shell,venv,user,ssh,cwd,perms,git,hg,jobs,exit,root,vgo -error $?)"
+    PS1="$(~/go/bin/powerline-go -cwd-max-depth 2 -max-width 50 -cwd-mode plain -modules nix-shell,venv,user,ssh,cwd,perms,git,hg,jobs,exit,root,vgo -error $?)"
 }
 
 if [ "$TERM" != "linux" ]; then
