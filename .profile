@@ -23,11 +23,3 @@ export PATH=$PATH:$GOROOT/bin:$HOME/go/bin
 # setup my personal bin for Mark made scripts
 [[ -L "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
 
-function _update_ps1() {
-    PS1="$(~/go/bin/powerline-go -cwd-max-depth 2 -max-width 50 -cwd-mode plain -modules nix-shell,venv,user,ssh,cwd,perms,git,hg,jobs,exit,root,vgo -error $?)"
-}
-
-if [ "$TERM" != "linux" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
-
