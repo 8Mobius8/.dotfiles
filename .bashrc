@@ -9,3 +9,7 @@ function docker-rm-all() {
 }
 
 source mobius-prompt.sh
+
+# Aliases for ease of use for Mobius work
+alias tmux-start="tmux new -s _"
+
