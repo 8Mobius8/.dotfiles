@@ -1,18 +1,11 @@
 [user]
-	name = Mark Odell
 	email = m4rk.odell@gmail.com
-	signingkey = AFB0CF3C60CC84CC
-[core]
-	excludesfile = /Users/mo/.gitignore_global
-	editor = nvim
-[push]
-	default = simple
-[gpg]
-	program = gpg
-[commit]
-	gpgsign = true
-[url "git@github.com:"]
-	insteadOf = https://github.com/
-
+	name = 8Mobius8
+	signingkey = D12B3FA0F416EEFE
 [credential]
-	helper = osxkeychain
+	helper =  "/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
